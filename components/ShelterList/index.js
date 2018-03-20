@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
-import { Button, Text } from 'native-base';
+import { Button, Text, SwipeRow, Icon } from 'native-base';
 
 import { Loading } from '../Loading';
 import { ShelterListItem } from '../ShelterListItem';
@@ -113,16 +113,45 @@ export default class ShelterList extends Component {
           bounces={false}
           data={this.state.shelters}
           extraData={this.state.shelters}
-          renderItem={({item}) => <ShelterListItem shelter={item} viewWebsite={this.viewShelterWebsite} viewPets={this.viewShelterPets} />}
+          renderItem={({item}) => <SwipeRow
+                                    leftOpenValue={75}
+                                    rightOpenValue={-75}
+                                    style={{flex:1, backgroundColor:'#9BDEAC'}}
+                                    left={
+                                      <Button
+                                        success
+                                        onPress={() => this.viewShelterPets(item.id['$t'], item.name['$t'])}
+                                      >
+                                        <Text>View Pets</Text>
+                                      </Button>
+                                    }
+                                    body={
+                                      <ShelterListItem
+                                        shelter={item}
+                                        viewWebsite={this.viewShelterWebsite}
+                                        viewPets={this.viewShelterPets}
+                                      />
+                                    }
+                                    right={
+                                      <Button
+                                        primary
+                                        onPress={() => this.viewShelterWebsite(item.id['$t'], item.name['$t'])}
+                                      >
+                                        <Text>View Petfinder</Text>
+                                      </Button>
+                                    }
+
+
+                                />}
           keyExtractor={(item, index) => item.id['$t']}
           showsVerticalScrollIndicator={true}
-          ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Shelter List </Text>}
+          ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelter List </Text>}
           ListFooterComponent={() => (this.state.lastOffset['$t'] < 100 &&
                                       <Button
                                         full rounded
                                         onPress={this.loadMoreShelters}
                                         accessibilityLabel="Load More Shelters"
-                                        style={{backgroundColor: 'white', alignSelf: 'stretch', margin: 10, borderColor: 'gray', borderWidth: 1}}
+                                        style={{backgroundColor: 'white', alignSelf: 'stretch', margin: 10, borderColor: 'black', borderWidth: 1}}
                                       >
                                         <Text style={{color:'#59A96A'}}>Load More Shelters</Text>
                                       </Button>)
@@ -137,11 +166,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#9BDEAC',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'stretch'
   },
   flatlist: {
     flex: 1,
     marginTop: 80,
     backgroundColor: '#9BDEAC',
+    flexDirection:'column',
   },
 });

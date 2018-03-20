@@ -47,7 +47,7 @@ export default class Home extends Component {
       <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
         <Text>Enter 5 digit ZIP Code</Text>
         <TextInput
-          style={{alignSelf: 'stretch', margin: 10, height: 40, borderColor: 'gray', borderWidth: 1}}
+          style={{alignSelf: 'stretch', margin: 10, height: 40, borderColor: 'black', borderWidth: 1}}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
           placeholder={'Enter 5 digit ZIP Code'}
@@ -61,7 +61,7 @@ export default class Home extends Component {
           full rounded
           onPress={this.viewShelters}
           accessibilityLabel="Search Petfinder Shelters"
-          style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, borderColor: 'gray', borderWidth: 1}}
+          style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, borderColor: 'black', borderWidth: 1}}
         >
           <Text>Search</Text>
         </Button>
