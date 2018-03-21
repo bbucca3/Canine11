@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { Animated, StyleSheet, View, FlatList } from 'react-native';
 import { Button, Text, SwipeRow, Icon } from 'native-base';
 
 import { Loading } from '../Loading';
@@ -30,6 +30,7 @@ export default class ShelterList extends Component {
       err: {
         message: ""
       },
+      fadeAnim: new Animated.Value(0),
     }
     this.viewShelterWebsite = this.viewShelterWebsite.bind(this);
     this.viewShelterPets = this.viewShelterPets.bind(this);
@@ -45,7 +46,13 @@ export default class ShelterList extends Component {
       let { lastOffset } = json.petfinder
       let shelters = json.petfinder.shelters.shelter
       this.setState({isLoading: false, shelters, lastOffset}, () => {
-        console.log('ShelterList componentDidMount setState ', this.state)
+        Animated.timing(                  // Animate over time
+          this.state.fadeAnim,            // The animated value to drive
+          {
+            toValue: 1,                   // Animate to opacity: 1 (opaque)
+            duration: 100,
+          }
+        ).start()
       })
     }).catch((err) => {
       console.log('ShelterList fetch error: ', err)
@@ -93,6 +100,7 @@ export default class ShelterList extends Component {
   }
 
   render() {
+    let { fadeAnim } = this.state
     if(this.state.isLoading) {
       return (
         <View style={styles.container}>
@@ -109,11 +117,13 @@ export default class ShelterList extends Component {
     }
     return (
       <View style={styles.container}>
+
         <FlatList style={styles.flatlist}
           bounces={false}
           data={this.state.shelters}
           extraData={this.state.shelters}
-          renderItem={({item}) => <SwipeRow
+          renderItem={({item}) => <Animated.View style={{opacity: fadeAnim}}>
+                                  <SwipeRow
                                     leftOpenValue={75}
                                     rightOpenValue={-75}
                                     stopLeftSwipe={75}
@@ -144,7 +154,7 @@ export default class ShelterList extends Component {
                                     }
 
 
-                                />}
+                                /></Animated.View>}
           keyExtractor={(item, index) => item.id['$t']}
           showsVerticalScrollIndicator={true}
           ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelters </Text>}

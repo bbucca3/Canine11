@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { StyleSheet, View, TextInput, ScrollView } from 'react-native';
-import { Button, Text, Icon } from 'native-base';
+import { Animated, StyleSheet, View, TextInput, ScrollView } from 'react-native';
+import { Container, Button, Text, Icon } from 'native-base';
 
 import ShelterList from '../ShelterList';
 
@@ -16,9 +16,20 @@ export default class Home extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      text: ''
+      text: '',
+      fadeAnim: new Animated.Value(0),
     }
     this.viewShelters = this.viewShelters.bind(this);
+  }
+
+  componentDidMount() {
+    Animated.timing(                  // Animate over time
+      this.state.fadeAnim,            // The animated value to drive
+      {
+        toValue: 1,                   // Animate to opacity: 1 (opaque)
+        duration: 500,
+      }
+    ).start();                        // Starts the animation
   }
 
   getPet(pet) {
@@ -36,7 +47,7 @@ export default class Home extends Component {
   }
 
   render() {
-
+    let { fadeAnim } = this.state
     return (
       <ScrollView
         style={styles.container}
@@ -44,7 +55,7 @@ export default class Home extends Component {
         bounces={false}
       >
         {/* <Text>Home Screen Component! { this.props.title }</Text> */}
-      <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+      <Animated.View style={{flex:1,justifyContent: "center",alignItems: "center",opacity:fadeAnim}}>
         <Text>Enter 5 digit ZIP Code</Text>
         <TextInput
           style={{alignSelf: 'stretch', margin: 10, height: 40, borderColor: 'black', borderWidth: 1}}
@@ -66,8 +77,8 @@ export default class Home extends Component {
           <Text>Search</Text>
           <Icon name="md-paw" />
         </Button>
-        <Text style={{}}>Powered by Petfinder</Text>
-      </View>
+        <Text>Powered by Petfinder</Text>
+      </Animated.View>
       </ScrollView>
     );
   }
@@ -78,6 +89,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     flexDirection: 'column',
-    marginTop: 100,
+    marginTop: 50,
   },
 });
