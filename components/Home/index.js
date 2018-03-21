@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StyleSheet, View, TextInput, ScrollView } from 'react-native';
-import { Button, Text } from 'native-base';
+import { Button, Text, Icon } from 'native-base';
 
 import ShelterList from '../ShelterList';
 
@@ -58,12 +58,13 @@ export default class Home extends Component {
         />
 
         <Button
-          full rounded
+          full rounded iconRight
           onPress={this.viewShelters}
           accessibilityLabel="Search Petfinder Shelters"
-          style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, borderColor: 'black', borderWidth: 1}}
+          style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, }}
         >
           <Text>Search</Text>
+          <Icon name="md-paw" />
         </Button>
         <Text style={{}}>Powered by Petfinder</Text>
       </View>

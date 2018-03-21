@@ -118,13 +118,13 @@ export default class ShelterList extends Component {
                                     rightOpenValue={-75}
                                     stopLeftSwipe={75}
                                     stopRightSwipe={-75}
-                                    style={{flex:1, backgroundColor:'#9BDEAC'}}
+                                    style={{flex:1, backgroundColor:'#DDF2EB'}}
                                     left={
                                       <Button
                                         success
                                         onPress={() => this.viewShelterPets(item.id['$t'], item.name['$t'])}
                                       >
-                                        <Text>View Pets</Text>
+                                        <Icon active name="md-paw" />
                                       </Button>
                                     }
                                     body={
@@ -139,7 +139,7 @@ export default class ShelterList extends Component {
                                         primary
                                         onPress={() => this.viewShelterWebsite(item.id['$t'], item.name['$t'])}
                                       >
-                                        <Icon active name="trash" />
+                                        <Icon active name="md-globe" />
                                       </Button>
                                     }
 
@@ -147,7 +147,7 @@ export default class ShelterList extends Component {
                                 />}
           keyExtractor={(item, index) => item.id['$t']}
           showsVerticalScrollIndicator={true}
-          ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelter List </Text>}
+          ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelters </Text>}
           ListFooterComponent={() => (this.state.lastOffset['$t'] < 100 &&
                                       <Button
                                         full rounded
@@ -167,14 +167,14 @@ export default class ShelterList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9BDEAC',
+    backgroundColor: '#DDF2EB',
     justifyContent: 'center',
     alignItems: 'stretch',
   },
   flatlist: {
     flex: 1,
     marginTop: 80,
-    backgroundColor: '#9BDEAC',
+    backgroundColor: '#DDF2EB',
     flexDirection:'column',
   },
 });

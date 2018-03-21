@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { Button, Text } from 'native-base';
+import { Button, Text, Icon } from 'native-base';
 
 export const ShelterListItem = (props) => (
   <View style={styles.container}>
@@ -20,12 +20,13 @@ export const ShelterListItem = (props) => (
         <Text style={{color: '#59A96A'}}> View Adoptable Pets {"\n"}</Text>
       </TouchableOpacity> */}
       <Button
-        full rounded
+        full rounded iconRight
         onPress={() => props.viewPets(props.shelter.id['$t'], props.shelter.name['$t'])}
         accessibilityLabel="View Adoptable Pets"
         style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, borderColor: 'gray', borderWidth: 1}}
       >
         <Text>View Adoptable Pets</Text>
+        <Icon name="md-paw" />
       </Button>
       {/* Loads shelter page on petfinder
 
@@ -41,7 +42,7 @@ export const ShelterListItem = (props) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9BDEAC',
+    backgroundColor: '#DDF2EB',
     alignItems: 'stretch'
   },
   item: {
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     borderRadius: 10,
-    borderColor: '#9BDEAC',
+    borderColor: '#DDF2EB',
     marginLeft: 15,
     alignItems: 'center'
   },

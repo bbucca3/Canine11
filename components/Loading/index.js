@@ -10,7 +10,7 @@ export const Loading = () => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9BDEAC',
+    backgroundColor: '#DDF2EB',
     justifyContent: 'center'
   },
   horizontal: {
