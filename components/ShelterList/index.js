@@ -116,6 +116,8 @@ export default class ShelterList extends Component {
           renderItem={({item}) => <SwipeRow
                                     leftOpenValue={75}
                                     rightOpenValue={-75}
+                                    stopLeftSwipe={75}
+                                    stopRightSwipe={-75}
                                     style={{flex:1, backgroundColor:'#9BDEAC'}}
                                     left={
                                       <Button
@@ -137,7 +139,7 @@ export default class ShelterList extends Component {
                                         primary
                                         onPress={() => this.viewShelterWebsite(item.id['$t'], item.name['$t'])}
                                       >
-                                        <Text>View Petfinder</Text>
+                                        <Icon active name="trash" />
                                       </Button>
                                     }
 
@@ -167,7 +169,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#9BDEAC',
     justifyContent: 'center',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
   },
   flatlist: {
     flex: 1,
