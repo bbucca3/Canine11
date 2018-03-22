@@ -29,7 +29,7 @@ export default class Home extends Component {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
         duration: 500,
       }
-    ).start();                        // Starts the animation
+    ).start()
   }
 
   getPet(pet) {

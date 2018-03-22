@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Button, Text, Icon } from 'native-base';
 
 export const ShelterListItem = (props) => (
@@ -14,11 +14,6 @@ export const ShelterListItem = (props) => (
         {props.shelter.zip['$t']}
       </Text>
       <Text></Text>
-      {/* <TouchableOpacity
-        onPress={() => props.viewPets(props.shelter.id['$t'], props.shelter.name['$t'])}
-      >
-        <Text style={{color: '#59A96A'}}> View Adoptable Pets {"\n"}</Text>
-      </TouchableOpacity> */}
       <Button
         full rounded iconRight
         onPress={() => props.viewPets(props.shelter.id['$t'], props.shelter.name['$t'])}
@@ -28,13 +23,6 @@ export const ShelterListItem = (props) => (
         <Text>View Adoptable Pets</Text>
         <Icon name="md-paw" />
       </Button>
-      {/* Loads shelter page on petfinder
-
-        <TouchableOpacity
-        onPress={() => props.viewWebsite(props.shelter.id['$t'], props.shelter.name['$t'])}
-      >
-        <Text style={{color: '#59A96A'}}> View Petfinder Webpage </Text>
-      </TouchableOpacity> */}
     </View>
   </View>
 )

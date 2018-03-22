@@ -117,9 +117,8 @@ export default class ShelterList extends Component {
     }
     return (
       <View style={styles.container}>
-
         <FlatList style={styles.flatlist}
-          bounces={false}
+          bounces={true}
           data={this.state.shelters}
           extraData={this.state.shelters}
           renderItem={({item}) => <Animated.View style={{opacity: fadeAnim}}>
@@ -152,12 +151,11 @@ export default class ShelterList extends Component {
                                         <Icon active name="md-globe" />
                                       </Button>
                                     }
-
-
-                                /></Animated.View>}
+                                  />
+                                </Animated.View>}
           keyExtractor={(item, index) => item.id['$t']}
           showsVerticalScrollIndicator={true}
-          ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelters </Text>}
+          // ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelters </Text>}
           ListFooterComponent={() => (this.state.lastOffset['$t'] < 100 &&
                                       <Button
                                         full rounded
@@ -179,7 +177,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#DDF2EB',
     justifyContent: 'center',
-    alignItems: 'stretch',
   },
   flatlist: {
     flex: 1,
