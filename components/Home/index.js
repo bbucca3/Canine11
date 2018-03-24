@@ -28,6 +28,9 @@ export default class Home extends Component {
       {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
         duration: 500,
+        delay: 100,
+        isInteraction: false,
+        useNativeDriver: true
       }
     ).start()
   }

@@ -28,7 +28,7 @@ export default class ShelterList extends Component {
         $t: 0
       },
       err: {
-        message: ""
+        message: ''
       },
       fadeAnim: new Animated.Value(0),
     }
@@ -46,11 +46,15 @@ export default class ShelterList extends Component {
       let { lastOffset } = json.petfinder
       let shelters = json.petfinder.shelters.shelter
       this.setState({isLoading: false, shelters, lastOffset}, () => {
+        // Animates list items opacity
         Animated.timing(                  // Animate over time
           this.state.fadeAnim,            // The animated value to drive
           {
             toValue: 1,                   // Animate to opacity: 1 (opaque)
-            duration: 100,
+            duration: 500,
+            delay: 100,
+            isInteraction: false,
+            useNativeDriver: true
           }
         ).start()
       })
