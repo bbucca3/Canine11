@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Animated, StyleSheet, View, TextInput, ScrollView } from 'react-native';
-import { Container, Button, Text, Icon } from 'native-base';
+import { Container, Button, Text, Icon, H1, H2, H3 } from 'native-base';
 
 import ShelterList from '../ShelterList';
 
@@ -57,9 +57,10 @@ export default class Home extends Component {
         keyboardShouldPersistTaps={"handled"}
         bounces={false}
       >
-        {/* <Text>Home Screen Component! { this.props.title }</Text> */}
       <Animated.View style={{flex:1,justifyContent: "center",alignItems: "center",opacity:fadeAnim}}>
-        <Text>Enter 5 digit ZIP Code</Text>
+        <H1>{this.props.title}</H1>
+        <H2>Pet Shelter Search</H2>
+        <Text>Enter 5 digit ZIP Code:</Text>
         <TextInput
           style={{alignSelf: 'stretch', margin: 10, height: 40, borderColor: 'black', borderWidth: 1}}
           onChangeText={(text) => this.setState({text})}

@@ -10,7 +10,7 @@ export default class App extends Component<Props> {
         initialRoute={{
           component: Home,
           title: 'Home',
-          passProps: {index: 1, title: "Cool props!!!"},
+          passProps: {index: 1, title: 'Canine11'},
         }}
         style={{flex: 1}}
       />
