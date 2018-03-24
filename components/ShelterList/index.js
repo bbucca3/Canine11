@@ -13,8 +13,8 @@ export default class ShelterList extends Component {
 
   static propTypes = {
     index: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    navigator: PropTypes.object.isRequired
+    navigator: PropTypes.object.isRequired,
+    zip: PropTypes.string.isRequired
   }
 
   constructor(props, context) {
@@ -38,11 +38,10 @@ export default class ShelterList extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://api.petfinder.com/shelter.find?key=${key}&location=${this.props.text}&format=json&offset=0`)
+    fetch(`http://api.petfinder.com/shelter.find?key=${key}&location=${this.props.zip}&format=json&offset=0`)
     .then((res) => {
       return res.json()
     }).then((json) => {
-      //console.log('json: ', json.petfinder)
       let { lastOffset } = json.petfinder
       let shelters = json.petfinder.shelters.shelter
       this.setState({isLoading: false, shelters, lastOffset}, () => {
@@ -84,7 +83,7 @@ export default class ShelterList extends Component {
 
   loadMoreShelters() {
     let offset = this.state.lastOffset['$t']
-    fetch(`http://api.petfinder.com/shelter.find?key=${key}&location=${this.props.text}&format=json&offset=${offset}`)
+    fetch(`http://api.petfinder.com/shelter.find?key=${key}&location=${this.props.zip}&format=json&offset=${offset}`)
     .then((res) => {
       return res.json()
     }).then((json) => {
@@ -129,8 +128,6 @@ export default class ShelterList extends Component {
                                   <SwipeRow
                                     leftOpenValue={75}
                                     rightOpenValue={-75}
-                                    stopLeftSwipe={75}
-                                    stopRightSwipe={-75}
                                     style={{flex:1, backgroundColor:'#DDF2EB'}}
                                     left={
                                       <Button

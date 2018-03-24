@@ -16,7 +16,7 @@ export default class Home extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      text: '',
+      zip: '',
       fadeAnim: new Animated.Value(0),
     }
     this.viewShelters = this.viewShelters.bind(this);
@@ -40,12 +40,12 @@ export default class Home extends Component {
   }
 
   viewShelters() {
-    let { text } = this.state
+    let { zip } = this.state
     let nextIndex = ++this.props.index;
     this.props.navigator.push({
       component: ShelterList,
       title: 'Shelters',
-      passProps: {index: nextIndex, text, getPet: this.getPet},
+      passProps: {index: nextIndex, zip, getPet: this.getPet},
     });
   }
 
@@ -59,19 +59,18 @@ export default class Home extends Component {
       >
       <Animated.View style={{flex:1,justifyContent: "center",alignItems: "center",opacity:fadeAnim}}>
         <H1>{this.props.title}</H1>
-        <H2>Pet Shelter Search</H2>
-        <Text>Enter 5 digit ZIP Code:</Text>
+        {/* Adopt a Pet??? */}
+        <H3 style={{marginTop: 10}}>Pet Adoption Shelter Search</H3>
+        <Text style={{marginTop: 10}}>Enter 5 digit ZIP Code:</Text>
         <TextInput
           style={{alignSelf: 'stretch', margin: 10, height: 40, borderColor: 'black', borderWidth: 1}}
-          onChangeText={(text) => this.setState({text})}
+          onChangeText={(zip) => this.setState({zip})}
           value={this.state.text}
           placeholder={'Enter 5 digit ZIP Code'}
           maxLength={5}
           keyboardType={'number-pad'}
           clearButtonMode={"while-editing"}
-          // onEndEditing={() => this.viewShelters()}
         />
-
         <Button
           full rounded iconRight
           onPress={this.viewShelters}
