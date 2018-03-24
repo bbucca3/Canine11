@@ -27,7 +27,7 @@ export default class PetsList extends Component {
         $t: 0
       },
       err : {
-        message: ""
+        message: ''
       },
       id: props.id
     }

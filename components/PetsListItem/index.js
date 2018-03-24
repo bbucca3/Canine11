@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Image, FlatList } from 'react-native';
 import { Button, Text } from 'native-base';
 
-import { Loading } from '../Loading';
-
 export const PetsListItem = (props) => (
   <View style={styles.container}>
     <View style={styles.item}>
@@ -19,7 +17,6 @@ export const PetsListItem = (props) => (
                   style={{width: 75, height: 100, margin: 1, borderRadius: 5}}
                   source={{uri: item['$t']}}
                   resizeMode={Image.resizeMode.cover}
-
                 />
               )
             }
