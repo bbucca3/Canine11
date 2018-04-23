@@ -60,7 +60,7 @@ export default class Home extends Component {
       <Animated.View style={{flex:1,justifyContent: "center",alignItems: "center",opacity:fadeAnim}}>
         <H1>{this.props.title}</H1>
         {/* Adopt a Pet??? */}
-        <H3 style={{marginTop: 10}}>Pet Adoption Shelter Search</H3>
+        <H3 style={{marginTop: 10}}>Animal Shelter Search</H3>
         <Text style={{marginTop: 10}}>Enter 5 digit ZIP Code:</Text>
         <TextInput
           style={{alignSelf: 'stretch', margin: 10, height: 40, borderColor: 'black', borderWidth: 1}}
