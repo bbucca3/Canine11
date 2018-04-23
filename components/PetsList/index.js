@@ -29,13 +29,12 @@ export default class PetsList extends Component {
       err : {
         message: ''
       },
-      id: props.id
     }
     this.viewMorePetInfo = this.viewMorePetInfo.bind(this);
   }
 
   componentDidMount() {
-    fetch(`http://api.petfinder.com/shelter.getPets?key=${key}&id=${this.state.id}&format=json&offset=0`)
+    fetch(`http://api.petfinder.com/shelter.getPets?key=${key}&id=${this.props.id}&format=json&offset=0`)
     .then((res) => {
       return res.json()
     }).then((json) => {
