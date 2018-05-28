@@ -45,11 +45,11 @@ export default class ShelterList extends Component {
       let { lastOffset } = json.petfinder
       let shelters = json.petfinder.shelters.shelter
       this.setState({isLoading: false, shelters, lastOffset}, () => {
-        // Animates list items opacity
-        Animated.timing(                  // Animate over time
-          this.state.fadeAnim,            // The animated value to drive
+        // Animates shelter list items opacity
+        Animated.timing(
+          this.state.fadeAnim,
           {
-            toValue: 1,                   // Animate to opacity: 1 (opaque)
+            toValue: 1,
             duration: 500,
             delay: 0,
             isInteraction: false,
@@ -91,7 +91,6 @@ export default class ShelterList extends Component {
       let additionalShelters = json.petfinder.shelters.shelter
       let shelters = this.state.shelters.slice()
       additionalShelters.forEach((item) => {
-        // console.log('additionalShelters item: ', item)
         shelters.push(item)
       })
       this.setState({lastOffset, shelters}, () => {
@@ -125,38 +124,38 @@ export default class ShelterList extends Component {
           data={this.state.shelters}
           extraData={this.state.shelters}
           renderItem={({item}) => <Animated.View style={{opacity: fadeAnim}}>
-                                  <SwipeRow
-                                    leftOpenValue={75}
-                                    rightOpenValue={-75}
-                                    style={{flex:1, backgroundColor:'#DDF2EB'}}
-                                    left={
-                                      <Button
-                                        success
-                                        onPress={() => this.viewShelterPets(item.id['$t'], item.name['$t'])}
-                                      >
-                                        <Icon active name="md-paw" />
-                                      </Button>
-                                    }
-                                    body={
-                                      <ShelterListItem
-                                        shelter={item}
-                                        viewWebsite={this.viewShelterWebsite}
-                                        viewPets={this.viewShelterPets}
-                                      />
-                                    }
-                                    right={
-                                      <Button
-                                        primary
-                                        onPress={() => this.viewShelterWebsite(item.id['$t'], item.name['$t'])}
-                                      >
-                                        <Icon active name="md-globe" />
-                                      </Button>
-                                    }
-                                  />
-                                </Animated.View>}
+                                    <SwipeRow
+                                      leftOpenValue={75}
+                                      rightOpenValue={-75}
+                                      style={{flex:1, backgroundColor:'#DDF2EB'}}
+                                      left={
+                                        <Button
+                                          success
+                                          onPress={() => this.viewShelterPets(item.id['$t'], item.name['$t'])}
+                                        >
+                                          <Icon active name="md-paw" />
+                                        </Button>
+                                      }
+                                      body={
+                                        <ShelterListItem
+                                          shelter={item}
+                                          viewWebsite={this.viewShelterWebsite}
+                                          viewPets={this.viewShelterPets}
+                                        />
+                                      }
+                                      right={
+                                        <Button
+                                          primary
+                                          onPress={() => this.viewShelterWebsite(item.id['$t'], item.name['$t'])}
+                                        >
+                                          <Icon active name="md-globe" />
+                                        </Button>
+                                      }
+                                    />
+                                  </Animated.View>}
           keyExtractor={(item, index) => item.id['$t']}
           showsVerticalScrollIndicator={true}
-          // ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelters </Text>}
+          ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelters </Text>}
           ListFooterComponent={() => (this.state.lastOffset['$t'] < 100 &&
                                       <Button
                                         full rounded
@@ -165,8 +164,7 @@ export default class ShelterList extends Component {
                                         style={{backgroundColor: 'white', alignSelf: 'stretch', margin: 10, borderColor: 'black', borderWidth: 1}}
                                       >
                                         <Text style={{color:'#59A96A'}}>Load More Shelters</Text>
-                                      </Button>)
-                                      }
+                                      </Button>)}
         />
       </View>
     );
@@ -181,7 +179,7 @@ const styles = StyleSheet.create({
   },
   flatlist: {
     flex: 1,
-    marginTop: 80,
+    marginTop: 100,
     backgroundColor: '#DDF2EB',
     flexDirection:'column',
   },
