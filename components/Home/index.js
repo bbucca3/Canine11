@@ -28,7 +28,7 @@ export default class Home extends Component {
       {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
         duration: 500,
-        delay: 100,
+        delay: 0,
         isInteraction: false,
         useNativeDriver: true
       }
@@ -57,31 +57,31 @@ export default class Home extends Component {
         keyboardShouldPersistTaps={"handled"}
         bounces={false}
       >
-      <Animated.View style={{flex:1,justifyContent: "center",alignItems: "center",opacity:fadeAnim}}>
-        <H1>{this.props.title}</H1>
-        {/* Adopt a Pet??? */}
-        <H3 style={{marginTop: 10}}>Animal Shelter Search</H3>
-        <Text style={{marginTop: 10}}>Enter 5 digit ZIP Code:</Text>
-        <TextInput
-          style={{alignSelf: 'stretch', margin: 10, height: 40, borderColor: 'black', borderWidth: 1}}
-          onChangeText={(zip) => this.setState({zip})}
-          value={this.state.text}
-          placeholder={'Enter 5 digit ZIP Code'}
-          maxLength={5}
-          keyboardType={'number-pad'}
-          clearButtonMode={"while-editing"}
-        />
-        <Button
-          full rounded iconRight
-          onPress={this.viewShelters}
-          accessibilityLabel="Search Petfinder Shelters"
-          style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, }}
-        >
-          <Text>Search</Text>
-          <Icon name="md-paw" />
-        </Button>
-        <Text>Powered by Petfinder</Text>
-      </Animated.View>
+        <Animated.View style={{flex:1,justifyContent: "center",alignItems: "center",opacity:fadeAnim}}>
+          <H1>{this.props.title}</H1>
+          {/* Adopt a Pet??? */}
+          <H3 style={{marginTop: 10}}>Animal Shelter Search</H3>
+          <Text style={{marginTop: 10}}>Enter 5 digit ZIP Code:</Text>
+          <TextInput
+            style={{alignSelf: 'stretch', margin: 10, height: 40, borderColor: 'black', borderWidth: 1}}
+            onChangeText={(zip) => this.setState({zip})}
+            value={this.state.text}
+            placeholder={'Enter 5 digit ZIP Code'}
+            maxLength={5}
+            keyboardType={'number-pad'}
+            clearButtonMode={"while-editing"}
+          />
+          <Button
+            full rounded iconRight
+            onPress={this.viewShelters}
+            accessibilityLabel="Search Petfinder Shelters"
+            style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, }}
+          >
+            <Text>Search</Text>
+            <Icon name="md-paw" />
+          </Button>
+          <Text>Powered by Petfinder</Text>
+        </Animated.View>
       </ScrollView>
     );
   }

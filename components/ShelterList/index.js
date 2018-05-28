@@ -51,7 +51,7 @@ export default class ShelterList extends Component {
           {
             toValue: 1,                   // Animate to opacity: 1 (opaque)
             duration: 500,
-            delay: 100,
+            delay: 0,
             isInteraction: false,
             useNativeDriver: true
           }
