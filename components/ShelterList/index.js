@@ -155,7 +155,7 @@ export default class ShelterList extends Component {
                                   </Animated.View>}
           keyExtractor={(item, index) => item.id['$t']}
           showsVerticalScrollIndicator={true}
-          ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Scrolling Petfinder Shelters </Text>}
+          ListHeaderComponent={(item) => <Text style={{alignSelf: 'center'}}> Shelters near {this.props.zip} </Text>}
           ListFooterComponent={() => (this.state.lastOffset['$t'] < 100 &&
                                       <Button
                                         full rounded
