@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
-import { Button, Text } from 'native-base';
+import { Button, Text, Icon } from 'native-base';
 
 export const PetsListItem = (props) => (
   <View style={styles.container}>
@@ -30,6 +30,7 @@ export const PetsListItem = (props) => (
         style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, borderColor: 'gray', borderWidth: 1}}
       >
         <Text>View More Info</Text>
+        <Icon name="md-paw" />
       </Button>
     </View>
   </View>

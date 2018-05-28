@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Animated, StyleSheet, View, TextInput, ScrollView } from 'react-native';
+import { Animated, StyleSheet, View, TextInput, ScrollView, TabBarIOS } from 'react-native';
 import { Container, Button, Text, Icon, H1, H2, H3 } from 'native-base';
 
 import ShelterList from '../ShelterList';
@@ -52,6 +52,14 @@ export default class Home extends Component {
   render() {
     let { fadeAnim } = this.state
     return (
+      <TabBarIOS
+        barStyle={'default'}
+        barTintColor={'#DDF2EB'}
+      >
+      <TabBarIOS.Item
+        selected
+        systemIcon={'search'}
+      >
       <ScrollView
         style={styles.container}
         keyboardShouldPersistTaps={"handled"}
@@ -83,6 +91,8 @@ export default class Home extends Component {
           <Text>Powered by Petfinder</Text>
         </Animated.View>
       </ScrollView>
+      </TabBarIOS.Item>
+      </TabBarIOS>
     );
   }
 }
