@@ -62,16 +62,17 @@ export const PetsListItemInfo = (props) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9BDEAC',
+    backgroundColor: '#DDF2EB',
     alignItems: 'stretch'
   },
   item: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: 80,
+    marginTop: 20,
     borderWidth: 1,
     borderRadius: 1,
-    margin: 8,
+    borderColor: '#DDF2EB',
+    margin: 15,
     alignItems: 'center'
   },
   text: {

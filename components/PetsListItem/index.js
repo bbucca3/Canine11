@@ -38,7 +38,7 @@ export const PetsListItem = (props) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9BDEAC',
+    backgroundColor: '#DDF2EB',
     alignItems: 'stretch'
   },
   item: {
@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     borderRadius: 10,
-    margin: 8,
+    borderColor: '#DDF2EB',
+    margin: 15,
     alignItems: 'center'
   },
   text: {
