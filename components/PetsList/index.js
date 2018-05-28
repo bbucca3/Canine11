@@ -104,12 +104,12 @@ export default class PetsList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9BDEAC',
+    backgroundColor: '#DDF2EB',
     justifyContent: 'center'
   },
   flatlist: {
     flex: 1,
     marginTop: 80,
-    backgroundColor: '#9BDEAC',
+    backgroundColor: '#DDF2EB',
   },
 });
