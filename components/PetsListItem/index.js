@@ -6,23 +6,26 @@ export const PetsListItem = (props) => (
   <View style={styles.container}>
     <View style={styles.item}>
       {!props.pet.media.photos && <Text>No Photos Currently Available</Text>}
-
-      {props.pet.media.photos &&
-        <Image
-          style={{width: 75, height: 100, margin: 1, borderRadius: 5}}
-          source={{uri: props.pet.media.photos.photo.find((item) => item['@size'] === 'x')['$t']}}
-          resizeMode={Image.resizeMode.cover}
-        />
-      }
-      <Text style={styles.text}>
-        {"Name: " + props.pet.name['$t']}
-      </Text>
-      <Text style={styles.text}>
-        {"Animal: " + props.pet.animal['$t']}
-      </Text>
-      <Text style={styles.text}>
-        {"Age: " + props.pet.age['$t']}
-      </Text>
+      <View style={styles.petinfo}>
+        {props.pet.media.photos &&
+          <Image
+            style={{width: 150, height: 110, margin: 15, borderRadius: 5}}
+            source={{uri: props.pet.media.photos.photo.find((item) => item['@size'] === 'x')['$t']}}
+            resizeMode={Image.resizeMode.cover}
+          />
+        }
+        <View style={styles.grouptext}>
+          <Text style={styles.text}>
+            {"Name: " + props.pet.name['$t']}
+          </Text>
+          <Text style={styles.text}>
+            {"Animal: " + props.pet.animal['$t']}
+          </Text>
+          <Text style={styles.text}>
+            {"Age: " + props.pet.age['$t']}
+          </Text>
+        </View>
+      </View>
       <Button
         full rounded
         onPress={() => props.viewMore(props.pet)}
@@ -49,6 +52,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#DDF2EB',
     margin: 15,
+    alignItems: 'center'
+  },
+  petinfo: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  grouptext: {
+    flex: 1,
     alignItems: 'center'
   },
   text: {
