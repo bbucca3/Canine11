@@ -27,7 +27,7 @@ export default class Home extends Component {
       this.state.fadeAnim,            // The animated value to drive
       {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
-        duration: 500,
+        duration: 250,
         delay: 0,
         isInteraction: false,
         useNativeDriver: true
@@ -80,7 +80,7 @@ export default class Home extends Component {
             clearButtonMode={"while-editing"}
           />
           <Button
-            full rounded iconRight
+            full rounded
             onPress={this.viewShelters}
             accessibilityLabel="Search Petfinder Shelters"
             style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, }}

@@ -15,7 +15,7 @@ export const ShelterListItem = (props) => (
       </Text>
       <Text></Text>
       <Button
-        full rounded iconRight
+        full rounded
         onPress={() => props.viewPets(props.shelter.id['$t'], props.shelter.name['$t'])}
         accessibilityLabel="View Adoptable Pets"
         style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, borderColor: 'gray', borderWidth: 1}}

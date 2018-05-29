@@ -161,9 +161,10 @@ export default class ShelterList extends Component {
                                         full rounded
                                         onPress={this.loadMoreShelters}
                                         accessibilityLabel="Load More Shelters"
-                                        style={{backgroundColor: 'white', alignSelf: 'stretch', margin: 10, borderColor: 'black', borderWidth: 1}}
+                                        style={{backgroundColor: '#59A96A', alignSelf: 'stretch', margin: 10, borderColor: 'gray', borderWidth: 1}}
                                       >
-                                        <Text style={{color:'#59A96A'}}>Load More Shelters</Text>
+                                        <Text>Load More Shelters</Text>
+                                        <Icon name="md-paw" />
                                       </Button>)}
         />
       </View>
