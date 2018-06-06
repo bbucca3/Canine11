@@ -4,6 +4,7 @@ import { Animated, StyleSheet, View, TextInput, ScrollView, TabBarIOS } from 're
 import { Container, Button, Text, Icon, H1, H2, H3 } from 'native-base';
 
 import ShelterList from '../ShelterList';
+import Saved from '../Saved';
 
 export default class Home extends Component {
 
@@ -18,8 +19,10 @@ export default class Home extends Component {
     this.state = {
       zip: '',
       fadeAnim: new Animated.Value(0),
+      selected: true,
     }
     this.viewShelters = this.viewShelters.bind(this);
+    this.updateTabSelection = this.updateTabSelection.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +52,17 @@ export default class Home extends Component {
     });
   }
 
+  updateTabSelection() {
+    console.log('hello Home updateTabSelection')
+    this.setState({
+      selected: !this.state.selected
+    })
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmountQ!!!!')
+  }
+
   render() {
     let { fadeAnim } = this.state
     return (
@@ -57,8 +71,9 @@ export default class Home extends Component {
         barTintColor={'#DDF2EB'}
       >
       <TabBarIOS.Item
-        selected
+        selected={this.state.selected}
         systemIcon={'search'}
+        onPress={this.updateTabSelection}
       >
       <ScrollView
         style={styles.container}
@@ -92,6 +107,7 @@ export default class Home extends Component {
         </Animated.View>
       </ScrollView>
       </TabBarIOS.Item>
+      <Saved />
       </TabBarIOS>
     );
   }
