@@ -2,11 +2,6 @@
 
 > Petfinder Shelter Search
 
-![Home Screen](screenshots/HomeScreen1.png)
-![Shelters Screen](screenshots/SheltersScreen1.png)
-![Pets Screen](screenshots/PetsScreen1.png)
-![Pet Detail](screenshots/PetDetailScreen1.png)
-
 ## Team
 
   - Benjamin Bucca
@@ -15,6 +10,7 @@
 
 1. [Usage](#Usage)
 1. [Development](#Development)
+1. [App Screenshots](#Screenshots)
 
 ## Usage
 
@@ -45,3 +41,10 @@ Open browser (if one doesn't open automatically) and open console:
 Allow
 Able to view API requests and responses (in console)
 ```
+
+## Screenshots
+
+![Home Screen](screenshots/HomeScreen1.png)
+![Shelters Screen](screenshots/SheltersScreen1.png)
+![Pets Screen](screenshots/PetsScreen1.png)
+![Pet Detail](screenshots/PetDetailScreen1.png)
