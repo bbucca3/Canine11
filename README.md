@@ -2,10 +2,10 @@
 
 > Petfinder Shelter Search
 
-![Home Screen](HomeScreen1.png)
-![Shelters Screen](SheltersScreen1.png)
-![Pets Screen](PetsScreen1.png)
-![Pet Detail](PetDetailScreen1.png)
+![Home Screen](screenshots/HomeScreen1.png)
+![Shelters Screen](screenshots/SheltersScreen1.png)
+![Pets Screen](screenshots/PetsScreen1.png)
+![Pet Detail](screenshots/PetDetailScreen1.png)
 
 ## Team
 
