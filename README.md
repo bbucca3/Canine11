@@ -8,7 +8,12 @@
 
 ## Table of Contents
 
-1. [Development](#development)
+1. [Usage](#Usage)
+1. [Development](#Development)
+
+## Usage
+
+> Search for pets in animal shelters via any US zip code. Search results are from Petfinder.com API.
 
 ## Development
 
