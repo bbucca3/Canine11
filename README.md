@@ -2,6 +2,11 @@
 
 > Petfinder Shelter Search
 
+![Home Screen](HomeScreen1.png)
+![Shelters Screen](SheltersScreen1.png)
+![Pets Screen](PetsScreen1.png)
+![Pet Detail](PetDetailScreen1.png)
+
 ## Team
 
   - Benjamin Bucca
@@ -13,7 +18,7 @@
 
 ## Usage
 
-> Search for pets in animal shelters via any US zip code. Search results are from Petfinder.com API.
+> Search for pets in animal shelters via any 5 digit US zip code. Search results are from Petfinder.com API. Built with Reach Native, tailored towards iOS.
 
 ## Development
 
