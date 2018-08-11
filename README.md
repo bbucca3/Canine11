@@ -15,6 +15,8 @@
 ## Usage
 
 > Search for pets in animal shelters via any 5 digit US zip code. Search results are from Petfinder.com API. Built with Reach Native, tailored towards iOS.
+> In order to use, visit Petfinder.com and register for a personal API key.
+> Create index.js under the api folder and paste in your API key (see example.js format under api folder).
 
 ## Development
 
