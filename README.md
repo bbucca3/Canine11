@@ -46,7 +46,5 @@ Able to view API requests and responses (in console)
 
 ## Screenshots
 
-<img src="screenshots/HomeScreen1.png" width="100" height="200">
-<img src="screenshots/SheltersScreen1.png" width="100" height="200">
-<img src="screenshots/PetsScreen1.png" width="100" height="200">
-<img src="screenshots/PetDetailScreen1.png" width="100" height="200">
+<img src="screenshots/HomeScreen1.png" width="100" height="200"><img src="screenshots/SheltersScreen1.png" width="100" height="200">
+<img src="screenshots/PetsScreen1.png" width="100" height="200"><img src="screenshots/PetDetailScreen1.png" width="100" height="200">
