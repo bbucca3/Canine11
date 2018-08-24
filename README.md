@@ -46,7 +46,7 @@ Able to view API requests and responses (in console)
 
 ## Screenshots
 
-![Home Screen](screenshots/HomeScreen1.png)
+![Home Screen](screenshots/HomeScreen1.png?s=200)
 ![Shelters Screen](screenshots/SheltersScreen1.png)
 ![Pets Screen](screenshots/PetsScreen1.png)
 ![Pet Detail](screenshots/PetDetailScreen1.png)
